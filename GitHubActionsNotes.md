@@ -21,6 +21,12 @@ GitHub Actions is free for public repositories and provides 2,000 free minutes p
 The event-driven programming model used by Actions enables workflows to be triggered by specific events like pushes, pull requests, issues, etc.
 
 
+## Github workflow
+Workflows are a set of automated steps that are triggered based on certain events in your GitHub repository. 
+These events can include pushing code to the repository, creating pull requests, or releasing a new version. 
+Workflows are defined using YAML syntax and are stored in a .github/workflows directory in your repository
+
+
 ## Breaking down the template
 1. 𝖶𝗈𝗋𝗄𝖿𝗅𝗈𝗐: 🔄 Define your workflow in a `.github/workflows` directory. Create a file, e.g., `main.yml`, to get started.
 2. 𝖤𝗏𝖾𝗇𝗍𝗌: 📡 This workflow triggers on every push to the `main` branch.
