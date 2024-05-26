@@ -24,8 +24,23 @@ The event-driven programming model used by Actions enables workflows to be trigg
 ## Github workflow
 Workflows are a set of automated steps that are triggered based on certain events in your GitHub repository. 
 These events can include pushing code to the repository, creating pull requests, or releasing a new version. 
-Workflows are defined using YAML syntax and are stored in a .github/workflows directory in your repository
+Workflows are defined using YAML syntax and are stored in a .github/workflows directory in your repository.
+This repository can have several workflows. And each workflow can perform a different set of jobs.
+For instance, you can use one workflow to create and test pull requests while another to deploy your application.
 
+## Event
+An event is a particular activity in a repository. It is like a trigger for workflows.
+When events occur within a repository, GitHub Actions respond to them. These events can push requests, pull requests, or other actions.
+
+##Jobs
+Jobs are a set of steps in a workflow. They are executed under the same runner. 
+Each step is either a shell script or an action. Scripts execute while actions run.
+
+## Actions
+An action is an application for the GitHub Actions. It performs frequently repeated tasks. 
+The application helps web developers to reduce the number of repetitive codes they write in their workflow files
+
+## R
 
 ## Breaking down the template
 1. 𝖶𝗈𝗋𝗄𝖿𝗅𝗈𝗐: 🔄 Define your workflow in a `.github/workflows` directory. Create a file, e.g., `main.yml`, to get started.
