@@ -28,29 +28,24 @@ Workflows are defined using YAML syntax and are stored in a .github/workflows di
 This repository can have several workflows. And each workflow can perform a different set of jobs.
 For instance, you can use one workflow to create and test pull requests while another to deploy your application.
 
-## Event
+### Event
 An event is a particular activity in a repository. It is like a trigger for workflows.
 When events occur within a repository, GitHub Actions respond to them. These events can push requests, pull requests, or other actions.
 
-##Jobs
-Jobs are a set of steps in a workflow. They are executed under the same runner. 
+### Jobs
+Jobs are a ```set of steps in a workflow```. They are executed under the same runner. 
 Each step is either a shell script or an action. Scripts execute while actions run.
 
-## Actions
+### Actions
 An action is an application for the GitHub Actions. It performs frequently repeated tasks. 
 The application helps web developers to reduce the number of repetitive codes they write in their workflow files
 
-## R
+### Runner
+A runner is a server that runs workflows when they are triggered. 
+One runner can perform a single task at a time
 
-## Breaking down the template
-1. 𝖶𝗈𝗋𝗄𝖿𝗅𝗈𝗐: 🔄 Define your workflow in a `.github/workflows` directory. Create a file, e.g., `main.yml`, to get started.
-2. 𝖤𝗏𝖾𝗇𝗍𝗌: 📡 This workflow triggers on every push to the `main` branch.
-3. 𝖩𝗈𝖻𝗌: 💼 The workflow contains one job named `build` that runs on the latest version of Ubuntu. Each Job can either execute commands or use Actions (Reusable scripts)
-4. 𝖱𝗎𝗇𝗇𝖾𝗋𝗌: 🏃‍♂️ GitHub-hosted runner with Node.js installed. Using 𝗋𝗎𝗇𝗌-𝗈𝗇 keyword we define the runner machine OS
-5. 𝖠𝖼𝗍𝗂𝗈𝗇𝗌: 🤖 Utilizes actions like `actions/checkout` to clone the repository and `actions/setup-node` to set up Node.js. Actions are like plugins in Jenkins
-6. 𝖠𝗋𝗍𝗂𝖿𝖺𝖼𝗍𝗌: 🎨 In this example, the workflow installs dependencies, runs tests, and can produce artifacts for further use.
-7. 𝖬𝖺𝗍𝗋𝗂𝗑 𝖡𝗎𝗂𝗅𝖽𝗌: 📊 This example focuses on a single job, but you can expand to matrix builds for parallel testing on different environment
 
+## A simple Github workflow
 ```bash
 name: Hello World
 
@@ -72,6 +67,17 @@ jobs:
     - name: Say Hello
       run: echo "Hello, World!"
 ```
+
+## Breaking down the template
+1. 𝖶𝗈𝗋𝗄𝖿𝗅𝗈𝗐: 🔄 Define your workflow in a `.github/workflows` directory. Create a file, e.g., `main.yml`, to get started.
+2. 𝖤𝗏𝖾𝗇𝗍𝗌: 📡 This workflow triggers on every push to the `main` branch.
+3. 𝖩𝗈𝖻𝗌: 💼 The workflow contains one job named `build` that runs on the latest version of Ubuntu. Each Job can either execute commands or use Actions (Reusable scripts)
+4. 𝖱𝗎𝗇𝗇𝖾𝗋𝗌: 🏃‍♂️ GitHub-hosted runner with Node.js installed. Using 𝗋𝗎𝗇𝗌-𝗈𝗇 keyword we define the runner machine OS
+5. 𝖠𝖼𝗍𝗂𝗈𝗇𝗌: 🤖 Utilizes actions like `actions/checkout` to clone the repository and `actions/setup-node` to set up Node.js. Actions are like plugins in Jenkins
+6. 𝖠𝗋𝗍𝗂𝖿𝖺𝖼𝗍𝗌: 🎨 In this example, the workflow installs dependencies, runs tests, and can produce artifacts for further use.
+7. 𝖬𝖺𝗍𝗋𝗂𝗑 𝖡𝗎𝗂𝗅𝖽𝗌: 📊 This example focuses on a single job, but you can expand to matrix builds for parallel testing on different environment
+
+
 
 
 ## Github Skeleton/tree strucuture 
